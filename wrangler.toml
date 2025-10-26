@@ -1,4 +1,7 @@
-name = "taproost-staging"
-main = "src/main.ts"
+name = "taproost-service"
 compatibility_date = "2025-10-26"
-compatibility_flags = ["nodejs_compat"]
+
+pages_build_output_dir = "./dist"
+
+[build]
+command = "bun run build"
