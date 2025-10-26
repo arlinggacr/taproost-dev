@@ -1,3 +1,4 @@
 name = "taproost-staging"
 main = "src/main.ts"
 compatibility_date = "2025-10-26"
+compatibility_flags = ["nodejs_compat"]
