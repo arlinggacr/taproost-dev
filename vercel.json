@@ -8,7 +8,8 @@
   "buildCommand": "bun run build",
   "builds": [
     {
-      "src": "src/main.ts"
+      "src": "src/main.ts",
+      "runtime": "vercel-bun@1.0.0"
     }
   ],
   "routes": [
