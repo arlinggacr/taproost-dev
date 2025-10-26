@@ -6,9 +6,9 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "bun run build",
+    "build": "npm run build && echo 'Build complete'",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "bun dist/main.js",
+    "start": "npm run dist/main.js",
     "start:dev": "STAGE=dev bun --hot src/main.ts",
     "start:debug": "bun start --debug --watch",
     "start:prod": "bun dist/main",
@@ -17,7 +17,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "bun run --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "prebuild": "bun install"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.917.0",
