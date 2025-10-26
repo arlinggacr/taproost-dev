@@ -7,9 +7,9 @@
   "installCommand": "bun install",
   "buildCommand": "bun run build",
   "functions": {
-    "api/**/*.ts": {
+    "src/main.ts": {
       "runtime": "bun@1.2.1"
     }
   },
-  "routes": [{ "src": "/(.*)", "dest": "api/main.ts" }]
+  "routes": [{ "src": "/(.*)", "dest": "src/main.ts" }]
 }
