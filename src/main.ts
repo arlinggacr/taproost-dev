@@ -53,8 +53,10 @@ async function bootstrap() {
 
   // Swagger
 
-  const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
-  SwaggerModule.setup("docs", app, swaggerDocument);
+  if (process.env.NODE_ENV !== "production") {
+    const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
+    SwaggerModule.setup("docs", app, swaggerDocument);
+  }
 
   const port =
     configService.get<number>("PORT") || parseInt(process.env.PORT) || 8080;
