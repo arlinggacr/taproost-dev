@@ -1,6 +1,7 @@
 name = "taproost-dev"
 compatibility_date = "2025-10-26"
-
 compatibility_flags = ["nodejs_compat"]
-command = "npm ci --legacy-peer-deps && npm run build"
+
+[build]
+command = "curl -fsSL https://bun.sh/install | bash && ~/.bun/bin/bun install --no-cache && ~/.bun/bin/bun run build"
 pages_build_output_dir = "dist"
