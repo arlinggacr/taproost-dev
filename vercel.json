@@ -7,9 +7,9 @@
   "installCommand": "bun install",
   "buildCommand": "bun run build",
   "functions": {
-    "api/index.ts": {
-      "runtime": "vercel-bun@latest"
+    "src/main.ts": {
+      "runtime": "bun@latest"
     }
   },
-  "routes": [{ "src": "/(.*)", "dest": "/api/index.ts" }]
+  "routes": [{ "src": "/(.*)", "dest": "src/main.ts" }]
 }
