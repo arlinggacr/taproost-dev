@@ -55,7 +55,8 @@
     "reflect-metadata": "^0.1.14",
     "rxjs": "^7.8.2",
     "typeorm": "^0.3.27",
-    "vercel": "^48.6.0"
+    "vercel": "^48.6.0",
+    "wrangler": "^4.45.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.4.9",
