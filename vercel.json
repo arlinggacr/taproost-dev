@@ -8,7 +8,7 @@
   "buildCommand": "bun run build",
   "functions": {
     "api/index.ts": {
-      "runtime": "vercel-bun@1.0.0"
+      "runtime": "bun@1.2.1"
     }
   },
   "routes": [
