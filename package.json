@@ -6,9 +6,10 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npm run build && echo 'Build complete'",
+    "build": "bun run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "npm run dist/main.js",
+    "postinstall": "npm install --legacy-peer-deps || true",
+    "start": "bun run dist/main.js",
     "start:dev": "STAGE=dev bun --hot src/main.ts",
     "start:debug": "bun start --debug --watch",
     "start:prod": "bun dist/main",
