@@ -1,4 +1,4 @@
-name = "taproost-service"
+name = "taproost-dev"
 compatibility_date = "2025-10-26"
 
 pages_build_output_dir = "./dist"
