@@ -1,22 +1,15 @@
 {
-  "build": {
-    "env": {
-      "BUN_VERSION": "1.2.1"
+  "functions": {
+    "api/index.ts": {
+      "runtime": "bun@1.2.1"
     }
   },
-  "installCommand": "bun install",
-  "buildCommand": "bun run build",
-  "builds": [
-    {
-      "src": "src/main.ts",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/main.ts",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
+      "dest": "api/index.ts"
     }
-  ]
+  ],
+  "installCommand": "bun install",
+  "buildCommand": "bun run build"
 }

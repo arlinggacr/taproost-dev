@@ -6,9 +6,9 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "bun run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "bun dist/main.js",
+    "build": "bun run build",
+    "start": "bun run api/index.ts",
     "start:dev": "STAGE=dev bun --hot src/main.ts",
     "start:debug": "bun start --debug --watch",
     "start:prod": "bun dist/main",
