@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "19844703-c489f646-a6ac-4363-bd43-567689887155",
+		"name": "inics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User / Auth",
+			"item": [
+				{
+					"name": "Register",
+					"id": "19844703-7bfa86f5-fa67-432c-8fc3-10388b37bee7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"inics\",\n    \"email\": \"inicsdevelopment@gmail.com\",\n    \"username\": \"inics-dev\",\n    \"password\": \"Inics@2025\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{staging}}/auth/register",
+							"host": [
+								"{{staging}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "19844703-e17f02d3-2583-4caa-b19e-a4029f104146",
+							"name": "200 - Sample Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"arlingga\",\n    \"email\": \"arlinggar02@gmail.com\",\n    \"username\": \"acr212\",\n    \"password\": \"arlingga02ara\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/v1/api/auth/register",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 09:38:54 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "306"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"isSuccess\": true,\n    \"data\": {\n        \"userId\": 1,\n        \"name\": \"arlingga\",\n        \"email\": \"arlinggar02@gmail.com\",\n        \"username\": \"acr212\",\n        \"password\": \"$2b$10$NGWw/MXafJQ4ojF/Af7XVO.tbJ3M4uo78JZs2r41DxX32TsrJtCPS\",\n        \"createdAt\": \"2025-06-25T02:38:54.061Z\",\n        \"updatedAt\": \"2025-06-25T02:38:54.061Z\",\n        \"deletedAt\": null,\n        \"userRole\": []\n    },\n    \"statusCode\": 201\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"id": "19844703-711ad607-7d3d-488d-811f-7d4d8478efbf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"inicsdevelopment@gmail.com\",\n    \"password\": \"Inics@2025\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev}}/auth/login",
+							"host": [
+								"{{dev}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "19844703-06400c43-429e-4029-9236-5f239bc9e373",
+							"name": "200 - Sample Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"arlinggar02@gmail.com\",\n    \"password\": \"arlingga02ara\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/auth/login",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Jun 2025 04:35:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "399"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"isSuccess\": true,\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJSb2xlIjpbXSwiaWF0IjoxNzUwOTEyNTE1LCJleHAiOjE3NTA5MTI4MTV9.14sQFs0mKlRMFStr0OVNLS3sAg7cZd5o5A1t3qfQTww\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJSb2xlIjpbXSwiaWF0IjoxNzUwOTEyNTE1LCJleHAiOjE3NTA5MTI4MTV9.14sQFs0mKlRMFStr0OVNLS3sAg7cZd5o5A1t3qfQTww\"\n    },\n    \"statusCode\": 201\n}"
+						}
+					]
+				}
+			],
+			"id": "19844703-bdf270de-4f2a-4404-bb45-3e90ae9f8bad"
+		},
+		{
+			"name": "Hospital",
+			"item": [],
+			"id": "19844703-93c6f302-103b-4ef5-a186-04572ae6bb0c"
+		},
+		{
+			"name": "Employee",
+			"item": [],
+			"id": "19844703-148f8c7a-ff11-4c28-b9c9-e5eb40c6226a"
+		},
+		{
+			"name": "Patients",
+			"item": [],
+			"id": "19844703-5d108df7-b55e-4144-a37d-5525fecc3fa5"
+		}
+	]
+}
