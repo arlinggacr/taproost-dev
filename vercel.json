@@ -6,12 +6,11 @@
   },
   "installCommand": "bun install",
   "buildCommand": "bun run build",
-  "builds": [
-    {
-      "src": "src/main.ts",
+  "functions": {
+    "src/main.ts": {
       "runtime": "vercel-bun@1.0.0"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
