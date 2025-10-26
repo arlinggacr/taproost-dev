@@ -1,14 +1,14 @@
 {
   "build": {
     "env": {
-      "BUN_VERSION": "1.1.26"
+      "BUN_VERSION": "1.2.1"
     }
   },
   "installCommand": "bun install",
   "buildCommand": "bun run build",
   "functions": {
     "src/main.ts": {
-      "runtime": "bun@latest"
+      "runtime": "bun@1.2.1"
     }
   },
   "routes": [{ "src": "/(.*)", "dest": "src/main.ts" }]
