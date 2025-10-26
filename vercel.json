@@ -5,17 +5,18 @@
     }
   },
   "installCommand": "bun install",
-  "buildCommand": "docker build -t taproost-service",
-  "functions": {
-    "api/index.ts": {
-      "runtime": "bun@1.2.1"
+  "buildCommand": "bun run build",
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/index.ts",
-      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+      "dest": "src/main.ts",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
     }
   ]
 }
