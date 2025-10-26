@@ -7,7 +7,6 @@ import {
   FastifyAdapter,
   NestFastifyApplication,
 } from "@nestjs/platform-fastify";
-import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { AppModule } from "./app.module";
 
 async function bootstrap() {
@@ -16,20 +15,20 @@ async function bootstrap() {
     new FastifyAdapter({})
   );
 
-  const swaggerConfig = new DocumentBuilder()
-    .setTitle("taproost-service")
-    .setDescription(
-      "TapRoost Service For Handling data and any logic business in here."
-    )
-    .setVersion("0.0.1")
-    .setLicense("taproost.cc", "https://github.com/taproost")
-    .addBearerAuth(
-      {
-        type: "http",
-      },
-      "access-token"
-    )
-    .build();
+  // const swaggerConfig = new DocumentBuilder()
+  //   .setTitle("taproost-service")
+  //   .setDescription(
+  //     "TapRoost Service For Handling data and any logic business in here."
+  //   )
+  //   .setVersion("0.0.1")
+  //   .setLicense("taproost.cc", "https://github.com/taproost")
+  //   .addBearerAuth(
+  //     {
+  //       type: "http",
+  //     },
+  //     "access-token"
+  //   )
+  //   .build();
 
   const configService = app.get(ConfigService);
   const logger = new Logger();
@@ -53,10 +52,10 @@ async function bootstrap() {
 
   // Swagger
 
-  if (process.env.NODE_ENV !== "production") {
-    const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
-    SwaggerModule.setup("docs", app, swaggerDocument);
-  }
+  // if (process.env.NODE_ENV !== "production") {
+  //   const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
+  //   SwaggerModule.setup("docs", app as any, swaggerDocument);
+  // }
 
   const port =
     configService.get<number>("PORT") || parseInt(process.env.PORT) || 8080;
