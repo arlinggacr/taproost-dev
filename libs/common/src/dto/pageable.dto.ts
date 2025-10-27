@@ -1,9 +1,9 @@
+import { Expose, Type } from "class-transformer";
+import { IsInt, IsOptional } from "class-validator";
 import {
   IPageableRequest,
   IPageableResponse,
-} from '@app/common/swagger/interface/pageable.interface';
-import { Expose, Type } from 'class-transformer';
-import { IsInt, IsOptional } from 'class-validator';
+} from "../swagger/interface/pageable.interface";
 
 export class PageableRequestDto implements IPageableRequest {
   @IsInt()

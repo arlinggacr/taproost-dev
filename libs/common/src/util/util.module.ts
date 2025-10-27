@@ -1,5 +1,5 @@
-import { ResponseInterceptor } from '@app/common/util/interceptor/response.interceptor';
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
+import { ResponseInterceptor } from "../util/interceptor/response.interceptor";
 
 @Module({
   imports: [],

@@ -1,4 +1,3 @@
-import { Role } from "@app/common/entity";
 import {
   CreateDateColumn,
   DeleteDateColumn,
@@ -8,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { Role } from "../entity";
 import { User } from "./user.entity";
 
 @Entity({

@@ -1,5 +1,5 @@
-import { RoleEnum } from '@app/common/entity';
-import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { RoleEnum } from "../../../../libs/common/src/entity/index";
 
 export class RegisterDto {
   @IsString()

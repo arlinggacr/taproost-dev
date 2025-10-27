@@ -1,10 +1,10 @@
-import { Role, User, UserRole } from "@app/common/entity";
 import { Module } from "@nestjs/common";
 import {
   ConfigService,
   ConfigModule as NestConfigModule,
 } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { Role, User, UserRole } from "../entity";
 
 @Module({
   imports: [

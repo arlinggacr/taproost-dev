@@ -1,5 +1,3 @@
-import { Role, RoleEnum } from "@app/common/entity";
-import { ParseException } from "@app/common/util/exceptions";
 import {
   CanActivate,
   ExecutionContext,
@@ -8,6 +6,8 @@ import {
 } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { Observable } from "rxjs";
+import { Role, RoleEnum } from "../../../../libs/common/src/entity/index";
+import { ParseException } from "../../../../libs/common/src/util/exceptions";
 import { ROLE_KEY } from "../../../constant";
 
 @Injectable()

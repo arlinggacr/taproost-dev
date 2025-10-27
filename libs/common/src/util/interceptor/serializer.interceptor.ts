@@ -1,13 +1,13 @@
-import { MethodLogger } from '@app/common/util/method-logger';
 import {
   CallHandler,
   ExecutionContext,
   Logger,
   NestInterceptor,
   UseInterceptors,
-} from '@nestjs/common';
-import { ClassConstructor, plainToInstance } from 'class-transformer';
-import { Observable, map } from 'rxjs';
+} from "@nestjs/common";
+import { ClassConstructor, plainToInstance } from "class-transformer";
+import { Observable, map } from "rxjs";
+import { MethodLogger } from "../../util/method-logger";
 
 export function Serialize(dto: ClassConstructor<any>) {
   return UseInterceptors(new SerializeInterceptor(dto));
@@ -22,17 +22,17 @@ export class SerializeInterceptor implements NestInterceptor {
 
   intercept(
     _context: ExecutionContext,
-    next: CallHandler<any>,
+    next: CallHandler<any>
   ): Observable<any> | Promise<Observable<any>> {
-    this.logger.log(MethodLogger.Service('Execute SerializeInterceptor'));
+    this.logger.log(MethodLogger.Service("Execute SerializeInterceptor"));
 
     return next.handle().pipe(
       map((data: any) =>
         plainToInstance(this.dto, data, {
           excludeExtraneousValues: true,
           enableImplicitConversion: true,
-        }),
-      ),
+        })
+      )
     );
   }
 }

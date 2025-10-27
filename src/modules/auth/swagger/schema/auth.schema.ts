@@ -1,6 +1,5 @@
-import { RoleEnum } from "@app/common/entity/role.entity";
-import { User } from "@app/common/entity/user.entity";
 import { ApiProperty } from "@nestjs/swagger";
+import { RoleEnum, User } from "../../../../../libs/common/src/entity/index";
 
 export class LoginDto {
   @ApiProperty({ example: "john.doe@example.com" })

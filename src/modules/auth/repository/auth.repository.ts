@@ -1,9 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Role, RoleEnum, User, UserRole } from "@app/common/entity";
 import { Injectable, Logger } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import * as bcrypt from "bcrypt";
 import { Repository } from "typeorm";
+import {
+  Role,
+  RoleEnum,
+  User,
+  UserRole,
+} from "../../../../libs/common/src/entity/index";
 
 @Injectable()
 export class AuthRepository {

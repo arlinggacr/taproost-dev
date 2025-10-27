@@ -1,6 +1,3 @@
-import { RoleEnum, User } from "@app/common/entity";
-import { ParseException } from "@app/common/util/exceptions";
-import { MethodLogger } from "@app/common/util/method-logger";
 import {
   Injectable,
   Logger,
@@ -11,6 +8,9 @@ import {
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
 import { v4 as uuidv4 } from "uuid";
+import { RoleEnum, User } from "../../../../libs/common/src/entity/index";
+import { ParseException } from "../../../../libs/common/src/util/exceptions";
+import { MethodLogger } from "../../../../libs/common/src/util/method-logger";
 import { MailService } from "../../../helpers/mailer-service";
 import { EmailUsername } from "../dto/find-email.dto";
 import { JwtResponse } from "../interface/jwt-definition.interface";

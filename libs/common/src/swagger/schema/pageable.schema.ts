@@ -1,8 +1,8 @@
+import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 import {
   IPageableRequest,
   IPageableResponse,
-} from '@app/common/swagger/interface/pageable.interface';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+} from "../../swagger/interface/pageable.interface";
 
 export class PageableRequestSchema implements IPageableRequest {
   @ApiPropertyOptional({

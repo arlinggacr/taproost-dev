@@ -1,4 +1,3 @@
-import { UserRole } from "@app/common/entity";
 import {
   Column,
   CreateDateColumn,
@@ -8,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { UserRole } from "../entity";
 
 export enum RoleEnum {
   SUPER_ADMIN = "SUPER_ADMIN",

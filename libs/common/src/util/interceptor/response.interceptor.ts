@@ -1,4 +1,3 @@
-import { MethodLogger } from "@app/common/util/method-logger";
 import {
   CallHandler,
   ExecutionContext,
@@ -8,6 +7,7 @@ import {
 } from "@nestjs/common";
 import { FastifyReply } from "fastify";
 import { Observable, map } from "rxjs";
+import { MethodLogger } from "../../util/method-logger";
 
 interface ResponseSchema<T> {
   isSuccess: boolean;

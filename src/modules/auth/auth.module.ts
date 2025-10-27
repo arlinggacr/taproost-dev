@@ -1,9 +1,9 @@
-import { ConfigModule, DatabaseModule } from "@app/common";
-import { Role, User, UserRole } from "@app/common/entity";
 import { Module } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { JwtModule } from "@nestjs/jwt";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { Role, User, UserRole } from "../../../libs/common/src/entity/index";
+import { ConfigModule, DatabaseModule } from "../../../libs/common/src/index";
 import { MailService } from "../../helpers/mailer-service";
 import { AuthController } from "./controllers/auth.controller";
 import { JwtAccessGuard } from "./guard/jwt-access.guard";
