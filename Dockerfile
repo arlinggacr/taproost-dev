@@ -1,32 +1,55 @@
 # ------------------ Builder Stage ------------------
-# Use official Bun image to build the app
-FROM oven/bun:1.1.0 AS builder
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-COPY bun.lock package.json ./
+# Copy package files
+COPY package*.json ./
 
-RUN bun install
+# Install dependencies
+RUN npm install
 
+# Copy the rest of the source code
 COPY . .
 
-RUN bun run build
+# Build the app
+RUN npm run build
 
 
 # ------------------ Runner Stage ------------------
-FROM oven/bun:1.1.0 AS runner
+FROM node:22-alpine AS runner
 
 WORKDIR /app
 
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/bun.lock ./
+# Copy only what's needed for runtime
+COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 
+# Set environment variables
+ENV STAGE=dev
 ENV PORT=8080
 EXPOSE 8080
 
-# HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
-#   CMD curl -f http://localhost:$PORT/ || exit 1
+# Start the app
+CMD ["npm", "run", "start"]
 
-CMD ["bun", "run", "start"]
+
+# ------------------ Bun Alternative (commented out) ------------------
+# FROM oven/bun:1.1.0 AS builder
+# WORKDIR /app
+# COPY package.json bun.lockb ./
+# RUN bun install
+# COPY . .
+# RUN bun run build
+#
+# FROM oven/bun:1.1.0 AS runner
+# WORKDIR /app
+# COPY --from=builder /app/package.json ./
+# COPY --from=builder /app/bun.lockb ./
+# COPY --from=builder /app/node_modules ./node_modules
+# COPY --from=builder /app/dist ./dist
+# ENV NODE_ENV=production
+# ENV PORT=8080
+# EXPOSE 8080
+# CMD ["bun", "run", "start:prod"]
