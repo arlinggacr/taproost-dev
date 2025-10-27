@@ -27,8 +27,6 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 
 # Set environment variables
-ENV STAGE=dev
-ENV PORT=8080
 EXPOSE 8080
 
 # Start the app
